@@ -1,0 +1,15 @@
+---
+layout: landingpage
+---
+
+<div id="nav">
+  <ul id="nav-items">
+    {% for p in site.data.pages %}
+      <a href="{{p.url}}"><li id="{{p.pageid}}" class="nav-item" data-color="#{{p.color}}" data-location="p.location">{{p.title}}</li></a>
+    {% endfor %}
+  </ul>
+</div>
+
+<div id="footer">
+  <p> Website made by <a href="http://erikhallmark.com" target="_blank">Erik Hallmark</a></p>
+</div>

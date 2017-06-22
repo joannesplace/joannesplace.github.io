@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="/css/page-layout.css">
+    <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% if page.title %}{{page.title}}{% else %}{{site.title}}{% endif %}</title>
+  </head>
+  <body>
+    <script src="/js/libs/jquery-3.2.0.min.js"></script>
+    <script src="/js/page.js"></script>
+
+    <h1 id="title"><a id="title-link" href="/">{{site.title}}</a></h1>
+
+    <span id="nav-button-wrapper"><div id="nav-button"></div></span>
+
+    <div id="nav">
+      <ul id="nav-items">
+
+        {% for link in page.links %}
+
+          <a href="{{link.link}}"><li class="nav-item">{{link.name}}</li></a>
+
+        {% endfor %}
+
+      </ul>
+
+    </div>
+
+    <div id="main">
+      {{content}}
+    </div>
+
+  </body>
+</html>
